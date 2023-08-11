@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sjakkbrett</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="board"></div>
+
+    <script>
+        function addSquareOdd() {
+            let q = document.getElementById("board");
+            q.innerHTML += `
+            <div class="darkSquare"></div>
+            <div class="lightSquare"></div>
+            `;
+        }
+
+        function addSquareEven() {
+            let q = document.getElementById("board");
+            q.innerHTML += `
+            <div class="lightSquare"></div>
+            <div class="darkSquare"></div>
+            `;
+        }
+
+        let rows = 0;
+        while (rows < 8) {
+            if (rows % 2 === 0) {
+                for (let i = 0; i < 4; i++) {
+                    addSquareEven();
+                }
+            } else {
+                for (let i = 0; i < 4; i++) {
+                    addSquareOdd();
+                }
+            }
+            rows++;
+        }
+    </script>
+</body>
+</html>
